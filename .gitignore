@@ -1,0 +1,15 @@
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Secrets — never commit credentials
+.env
+.env.*
+
+# Dependencies (if a build step is ever added)
+node_modules/

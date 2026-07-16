@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maksim Padleski — no-code developer and automation specialist. Bubble.io, Make, n8n, AI agents.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Maksim Padleski — No-Code Developer &amp; Automation Specialist</title>
+  <style>
+    :root {
+      --bg: #FAF6F0;
+      --surface: #F2EADD;
+      --border: #E5D9C7;
+      --text: #3D3229;
+      --muted: #7D6F5F;
+      --accent: #DF7A2E;
+      --accent-dark: #C4651F;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0;
+      background: rgba(250, 246, 240, 0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+    .logo { font-weight: 600; font-size: 15px; color: var(--text); text-decoration: none; }
+    nav a {
+      color: var(--muted); text-decoration: none; font-size: 14px;
+      margin-left: 22px;
+    }
+    nav a:hover { color: var(--accent-dark); }
+
+    section { padding: 56px 0; }
+    h1 { font-size: 26px; font-weight: 650; line-height: 1.3; }
+    h2 {
+      font-size: 19px; font-weight: 650; margin-bottom: 24px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+    .accent { color: var(--accent); }
+
+    /* About */
+    .about-grid {
+      display: flex; gap: 36px; align-items: center;
+    }
+    .photo {
+      width: 168px; height: 168px; flex-shrink: 0;
+      border-radius: 16px; object-fit: cover;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .about-text p { margin-bottom: 12px; color: var(--text); }
+    .about-text .lead { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+    .about-text .sub { color: var(--muted); }
+
+    /* Stack */
+    .stack { padding: 8px 0 48px; }
+    .stack-row { display: flex; flex-wrap: wrap; gap: 14px 30px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 14px; color: var(--text); font-weight: 500;
+    }
+    .badge svg, .badge img { width: 26px; height: 26px; }
+
+    /* Projects */
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { border-color: var(--accent); }
+    .shot {
+      aspect-ratio: 16 / 9;
+      border-bottom: 1px solid var(--border);
+      background: #EDE3D3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23EDE3D3'/%3E%3Crect width='640' height='34' fill='%23E2D5C0'/%3E%3Ccircle cx='20' cy='17' r='5' fill='%23DF7A2E' opacity='0.55'/%3E%3Ccircle cx='38' cy='17' r='5' fill='%23DF7A2E' opacity='0.35'/%3E%3Ccircle cx='56' cy='17' r='5' fill='%23DF7A2E' opacity='0.2'/%3E%3Crect x='28' y='66' width='260' height='22' rx='5' fill='%23DCCDB4'/%3E%3Crect x='28' y='108' width='584' height='11' rx='4' fill='%23E3D7C2'/%3E%3Crect x='28' y='130' width='500' height='11' rx='4' fill='%23E3D7C2'/%3E%3Crect x='28' y='170' width='180' height='110' rx='8' fill='%23E3D7C2'/%3E%3Crect x='230' y='170' width='180' height='110' rx='8' fill='%23E3D7C2'/%3E%3Crect x='432' y='170' width='180' height='110' rx='8' fill='%23E3D7C2'/%3E%3Ctext x='320' y='330' font-family='Segoe UI, Arial' font-size='15' fill='%238A7B6C' text-anchor='middle'%3Eapp screenshot%3C/text%3E%3C/svg%3E") center / cover no-repeat;
+    }
+    .card-body {
+      padding: 16px 20px 20px;
+      display: flex; flex-direction: column; gap: 8px; flex: 1;
+    }
+    .card h3 { font-size: 15.5px; font-weight: 600; }
+    .card p { font-size: 13.5px; color: var(--muted); flex: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11.5px; color: var(--muted); font-weight: 500;
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 5px; padding: 3px 9px;
+    }
+    .tag svg, .tag img { width: 13px; height: 13px; }
+    .card a {
+      font-size: 13px; color: var(--accent-dark); text-decoration: none;
+      font-weight: 600; margin-top: 4px;
+    }
+    .card a:hover { text-decoration: underline; }
+
+    /* Contact */
+    .contact-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 36px;
+      text-align: center;
+    }
+    .contact-box p { color: var(--muted); max-width: 460px; margin: 8px auto 0; font-size: 14px; }
+    .links { margin-top: 22px; display: flex; justify-content: center; gap: 26px; }
+    .links a { color: var(--accent-dark); font-size: 14px; font-weight: 600; text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 0; text-align: center;
+      color: var(--muted); font-size: 12.5px;
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 16px; }
+      .nav { padding: 12px 0; }
+      nav a { margin-left: 14px; font-size: 13.5px; }
+      .about-grid { flex-direction: column; text-align: center; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Official tool logos (Simple Icons), reused via <use> -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-make" viewBox="0 0 24 24"><path d="M13.38 3.498c-.27 0-.511.19-.566.465L9.85 18.986a.578.578 0 0 0 .453.678l4.095.826a.58.58 0 0 0 .682-.455l2.963-15.021a.578.578 0 0 0-.453-.678l-4.096-.826a.589.589 0 0 0-.113-.012zm-5.876.098a.576.576 0 0 0-.516.318L.062 17.697a.575.575 0 0 0 .256.774l3.733 1.877a.578.578 0 0 0 .775-.258l6.926-13.781a.577.577 0 0 0-.256-.776L7.762 3.658a.571.571 0 0 0-.258-.062zm11.74.115a.576.576 0 0 0-.576.576v15.426c0 .318.258.578.576.578h4.178a.58.58 0 0 0 .578-.578V4.287a.578.578 0 0 0-.578-.576Z"/></symbol>
+  <symbol id="i-n8n" viewBox="0 0 24 24"><path d="M21.4737 5.6842c-1.1772 0-2.1663.8051-2.4468 1.8947h-2.8955c-1.235 0-2.289.893-2.492 2.111l-.1038.623a1.263 1.263 0 0 1-1.246 1.0555H11.289c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947s-2.1663.8051-2.4467 1.8947H4.973c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947C1.1311 9.4737 0 10.6047 0 12s1.131 2.5263 2.5263 2.5263c1.1772 0 2.1663-.8051 2.4468-1.8947h1.4223c.2804 1.0896 1.2696 1.8947 2.4467 1.8947 1.1772 0 2.1663-.8051 2.4468-1.8947h1.0008a1.263 1.263 0 0 1 1.2459 1.0555l.1038.623c.203 1.218 1.257 2.111 2.492 2.111h.3692c.2804 1.0895 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263c-1.1772 0-2.1664.805-2.4468 1.8947h-.3692a1.263 1.263 0 0 1-1.246-1.0555l-.1037-.623A2.52 2.52 0 0 0 13.9607 12a2.52 2.52 0 0 0 .821-1.4794l.1038-.623a1.263 1.263 0 0 1 1.2459-1.0555h2.8955c.2805 1.0896 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263m0 1.2632a1.263 1.263 0 0 1 1.2631 1.2631 1.263 1.263 0 0 1-1.2631 1.2632 1.263 1.263 0 0 1-1.2632-1.2632 1.263 1.263 0 0 1 1.2632-1.2631M2.5263 10.7368A1.263 1.263 0 0 1 3.7895 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 1.2632 12a1.263 1.263 0 0 1 1.2631-1.2632m6.3158 0A1.263 1.263 0 0 1 10.1053 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 7.579 12a1.263 1.263 0 0 1 1.2632-1.2632m10.1053 3.7895a1.263 1.263 0 0 1 1.2631 1.2632 1.263 1.263 0 0 1-1.2631 1.2631 1.263 1.263 0 0 1-1.2632-1.2631 1.263 1.263 0 0 1 1.2632-1.2632"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol>
+  <symbol id="i-supabase" viewBox="0 0 24 24"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></symbol>
+  <symbol id="i-nextjs" viewBox="0 0 24 24"><path d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z"/></symbol>
+  <symbol id="i-openai" viewBox="0 0 24 24"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></symbol>
+  <symbol id="i-elevenlabs" viewBox="0 0 24 24"><path d="M4.6035 0v24h4.9317V0zm9.8613 0v24h4.9317V0z"/></symbol>
+  <symbol id="i-stripe" viewBox="0 0 24 24"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"/></symbol>
+  <symbol id="i-gsheets" viewBox="0 0 24 24"><path d="M11.318 12.545H7.91v-1.909h3.41v1.91zM14.728 0v6h6l-6-6zm1.363 10.636h-3.41v1.91h3.41v-1.91zm0 3.273h-3.41v1.91h3.41v-1.91zM20.727 6.5v15.864c0 .904-.732 1.636-1.636 1.636H4.909a1.636 1.636 0 0 1-1.636-1.636V1.636C3.273.732 4.005 0 4.909 0h9.318v6.5h6.5zm-3.273 2.773H6.545v7.909h10.91v-7.91zm-6.136 4.636H7.91v1.91h3.41v-1.91z"/></symbol>
+</svg>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">Maksim Padleski</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section id="about">
+    <div class="about-grid">
+      <img class="photo" alt="Maksim Padleski"
+           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='168' height='168'%3E%3Crect width='168' height='168' fill='%23F2EADD'/%3E%3Ccircle cx='84' cy='64' r='28' fill='%23DF7A2E' opacity='0.35'/%3E%3Cpath d='M30 168c0-30 24-46 54-46s54 16 54 46' fill='%23DF7A2E' opacity='0.35'/%3E%3Ctext x='84' y='158' font-family='Segoe UI' font-size='11' fill='%237D6F5F' text-anchor='middle'%3Eyour photo%3C/text%3E%3C/svg%3E">
+      <div class="about-text">
+        <p class="lead">Hi, I'm Maksim 👋</p>
+        <h1>No-code developer &amp;<br><span class="accent">automation specialist</span></h1>
+        <p class="sub" style="margin-top:12px">
+          I build web apps, automations and AI agents that save businesses time and money —
+          using Bubble.io, Make, n8n and modern AI tools. Fast delivery, clean logic,
+          no unnecessary complexity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack" id="stack">
+    <div class="stack-row">
+      <span class="badge"><img src="assets/bubble-io.png" alt="Bubble.io">Bubble.io</span>
+      <span class="badge"><svg fill="#6D00CC"><use href="#i-make"/></svg>Make</span>
+      <span class="badge"><svg fill="#EA4B71"><use href="#i-n8n"/></svg>n8n</span>
+      <span class="badge"><svg fill="#412991"><use href="#i-openai"/></svg>AI Agents</span>
+      <span class="badge"><svg fill="#26A5E4"><use href="#i-telegram"/></svg>Telegram Bots</span>
+      <span class="badge"><svg fill="#3FCF8E"><use href="#i-supabase"/></svg>Supabase</span>
+    </div>
+  </section>
+
+  <section id="projects" style="padding-top: 8px;">
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="shot" role="img" aria-label="Beauty studio website screenshot"></div>
+        <div class="card-body">
+          <h3>Beauty Studio Website + Booking Bot</h3>
+          <p>Business website with online booking connected to a Telegram bot that notifies the owner about new appointments instantly.</p>
+          <div class="tags">
+            <span class="tag"><svg fill="#000000"><use href="#i-nextjs"/></svg>Next.js</span>
+            <span class="tag"><svg fill="#3FCF8E"><use href="#i-supabase"/></svg>Supabase</span>
+            <span class="tag"><svg fill="#26A5E4"><use href="#i-telegram"/></svg>Telegram API</span>
+          </div>
+          <a href="#">View project →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="shot" role="img" aria-label="AI content pipeline screenshot"></div>
+        <div class="card-body">
+          <h3>AI Content Pipeline</h3>
+          <p>Fully automated pipeline that researches a topic, writes a script, generates voiceover and assembles video — hands-free.</p>
+          <div class="tags">
+            <span class="tag"><svg fill="#EA4B71"><use href="#i-n8n"/></svg>n8n</span>
+            <span class="tag"><svg fill="#412991"><use href="#i-openai"/></svg>OpenAI</span>
+            <span class="tag"><svg fill="#000000"><use href="#i-elevenlabs"/></svg>ElevenLabs</span>
+          </div>
+          <a href="#">View project →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="shot" role="img" aria-label="CRM automation screenshot"></div>
+        <div class="card-body">
+          <h3>CRM Automation for Small Business</h3>
+          <p>Lead capture from forms and messengers into a single CRM with automatic follow-ups. Saved the client ~10 hours a week.</p>
+          <div class="tags">
+            <span class="tag"><svg fill="#6D00CC"><use href="#i-make"/></svg>Make</span>
+            <span class="tag"><svg fill="#34A853"><use href="#i-gsheets"/></svg>Google Sheets</span>
+            <span class="tag">Webhooks</span>
+          </div>
+          <a href="#">View project →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="shot" role="img" aria-label="Marketplace MVP screenshot"></div>
+        <div class="card-body">
+          <h3>Marketplace MVP on Bubble</h3>
+          <p>Two-sided marketplace MVP built in 3 weeks: user profiles, listings, search, payments — without a single line of code.</p>
+          <div class="tags">
+            <span class="tag"><img src="assets/bubble-io.png" alt="Bubble.io">Bubble.io</span>
+            <span class="tag"><svg fill="#635BFF"><use href="#i-stripe"/></svg>Stripe</span>
+            <span class="tag">MVP</span>
+          </div>
+          <a href="#">View project →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact me</h2>
+    <div class="contact-box">
+      <h1 style="font-size:20px">Have a project in mind?</h1>
+      <p>Tell me what you want to automate or build — I usually reply within a few hours.</p>
+      <div class="links">
+        <a href="#">Telegram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">© 2026 Maksim Padleski · Built by hand, deployed for free 🙂</div>
+</footer>
+
+</body>
+</html>
