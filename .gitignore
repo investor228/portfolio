@@ -13,3 +13,5 @@ desktop.ini
 
 # Dependencies (if a build step is ever added)
 node_modules/
+variant-*.html
+gen_variants.py
