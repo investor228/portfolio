@@ -16,3 +16,6 @@ node_modules/
 variant-*.html
 gen_variants.py
 gen_variants2.py
+
+# Wrangler local cache
+.wrangler/
